@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大学生マッチングアプリ - ジョーク付き</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎓 大学生マッチング</h1>
+            <p>ジョークで繋がる新しい出会い</p>
+        </header>
+
+        <main>
+            <div class="profile-card">
+                <div class="profile-image">
+                    <img id="studentImage" src="" alt="大学生の写真" />
+                </div>
+                
+                <div class="profile-info">
+                    <h2 id="studentName">読み込み中...</h2>
+                    <p class="university">📚 <span id="university">大学名</span></p>
+                    <p class="age">🎂 <span id="age">年齢</span>歳</p>
+                </div>
+
+                <div class="joke-section">
+                    <h3>今日の一言ジョーク 😄</h3>
+                    <div class="joke-card">
+                        <p id="joke">ジョークを読み込み中...</p>
+                    </div>
+                </div>                <div class="action-buttons">
+                    <button class="btn btn-skip" onclick="loadNewProfile()">⏭️ 次の人</button>
+                    <button class="btn btn-like" onclick="likeProfile()">❤️ いいね</button>
+                </div>
+                  <div class="secondary-buttons">
+                    <button class="btn btn-secondary" onclick="showLikedList()">💖 いいね一覧 (<span id="likeCount">0</span>)</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- いいね一覧モーダル -->
+        <div class="modal-overlay" id="likedModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>💖 いいねした人一覧</h2>
+                    <button class="modal-close" onclick="closeLikedList()">&times;</button>
+                </div>
+                
+                <div class="modal-body" id="likedListContent">
+                    <!-- いいねした人のリストがここに表示されます -->
+                </div>
+                
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" onclick="clearAllLikes()">🗑️ 全削除</button>
+                    <button class="btn btn-primary" onclick="closeLikedList()">閉じる</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
